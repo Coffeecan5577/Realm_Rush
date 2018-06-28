@@ -7,13 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(Waypoint))]
 public class CubeEditor : MonoBehaviour
 {
-    [Tooltip("Value to snap blocks to in grid.")]
-    
+    [Tooltip("Value to snap blocks to in grid.")] 
     private Waypoint waypoint;
 
     private void Awake()
     {
         waypoint = GetComponent<Waypoint>();
+        
     }
 
     void Update()
