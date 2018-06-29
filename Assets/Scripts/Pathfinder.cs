@@ -9,6 +9,8 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] private Waypoint startingWayPoint, endingWayPoint;
 
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Queue<Waypoint> queue = new Queue<Waypoint>();
+    private bool _isRunning = true;
 
     private Vector2Int[] _directions =
     {
@@ -22,8 +24,8 @@ public class Pathfinder : MonoBehaviour
 	{
 	    LoadBlocks();
 	    ColorStartAndEnd();
-	    ExploreNeighbors();
-        print("Starting Position is: " + startingWayPoint);
+	    Pathfind();
+	    //ExploreNeighbors();
 	}
 
     private void ExploreNeighbors()
@@ -35,7 +37,7 @@ public class Pathfinder : MonoBehaviour
             {
                 grid[explorationCoordinates].SetTopColor(Color.cyan);
             }
-            catch (Exception e)
+            catch
             {
                 
             }
@@ -62,6 +64,28 @@ public class Pathfinder : MonoBehaviour
             {
                 grid.Add(gridPos, waypoint);
             }
+        }
+    }
+
+    private void Pathfind()
+    {
+        queue.Enqueue(startingWayPoint);
+        while (queue.Count > 0)
+        {
+            var searchCenter = queue.Dequeue();
+            print("Searching from: " + searchCenter); // TODO remove log later.
+            HaltIfEndFound(searchCenter);
+        }
+
+        print("Finished pathfinding?");
+    }
+
+    private void HaltIfEndFound(Waypoint searchCenter)
+    {
+        if (searchCenter == endingWayPoint)
+        {
+            print("Searching from end node, therefore stopping."); //TODO remove log when working.
+            _isRunning = false;
         }
     }
 }

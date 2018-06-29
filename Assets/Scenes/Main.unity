@@ -510,8 +510,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c4dc5442009eb4fa7877b6de9de94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingWayPoint: {fileID: 2037823919}
-  endingWayPoint: {fileID: 1380854933}
+  startingWayPoint: {fileID: 1082905261}
+  endingWayPoint: {fileID: 961931255}
+--- !u!114 &961931255 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
+    type: 2}
+  m_PrefabInternal: {fileID: 779908325}
+  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
 --- !u!1 &1068104456
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +583,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1082905261 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
+    type: 2}
+  m_PrefabInternal: {fileID: 871733659}
+  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
 --- !u!1001 &1086764940
 Prefab:
   m_ObjectHideFlags: 0
@@ -766,12 +778,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4876194297278004, guid: 4c95a8054acec8241bf1b63c33fa9251,
     type: 2}
   m_PrefabInternal: {fileID: 1343069247}
---- !u!114 &1380854933 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
-    type: 2}
-  m_PrefabInternal: {fileID: 1334474353}
-  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
 --- !u!1001 &1600182094
 Prefab:
   m_ObjectHideFlags: 0
@@ -1103,9 +1109,3 @@ Transform:
   m_PrefabParentObject: {fileID: 4876194297278004, guid: 4c95a8054acec8241bf1b63c33fa9251,
     type: 2}
   m_PrefabInternal: {fileID: 2028936304}
---- !u!114 &2037823919 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
-    type: 2}
-  m_PrefabInternal: {fileID: 407051947}
-  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
