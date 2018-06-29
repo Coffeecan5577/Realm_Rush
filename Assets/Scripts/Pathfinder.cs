@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
@@ -9,11 +10,37 @@ public class Pathfinder : MonoBehaviour
 
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
 
+    private Vector2Int[] _directions =
+    {
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.down,
+        Vector2Int.left,
+    };
+
 	void Start ()
 	{
 	    LoadBlocks();
 	    ColorStartAndEnd();
+	    ExploreNeighbors();
+        print("Starting Position is: " + startingWayPoint);
 	}
+
+    private void ExploreNeighbors()
+    {
+        foreach (var direction in _directions)
+        {
+            Vector2Int explorationCoordinates = startingWayPoint.GetGridPosition() + direction;
+            try
+            {
+                grid[explorationCoordinates].SetTopColor(Color.cyan);
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+    }
 
     private void ColorStartAndEnd()
     {
