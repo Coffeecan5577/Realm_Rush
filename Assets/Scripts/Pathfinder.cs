@@ -12,6 +12,7 @@ public class Pathfinder : MonoBehaviour
     readonly Queue<Waypoint> queue = new Queue<Waypoint>();
     private bool _isRunning = true;
     private Waypoint _searchCenter;
+    private  List<Waypoint> path = new List<Waypoint>(); 
 
     private readonly Vector2Int[] _directions =
     {
@@ -21,13 +22,29 @@ public class Pathfinder : MonoBehaviour
         Vector2Int.left,
     };
 
-	private void Start ()
-	{
-	    LoadBlocks();
-	    ColorStartAndEnd();
-	    Pathfind();
-	    ExploreNeighbors();
-	}
+    public List<Waypoint> GetPath()
+    {
+        LoadBlocks();
+        ColorStartAndEnd();
+        BreadthFirstSearch();
+        CreatePath();
+        return path;
+    }
+
+    private void CreatePath()
+    {
+        path.Add(endingWayPoint);
+
+        Waypoint previous = endingWayPoint.exploredFrom;
+
+        while (previous != startingWayPoint)
+        {
+            path.Add(previous);
+            previous = previous.exploredFrom;
+        }
+        path.Add(startingWayPoint);
+        path.Reverse();
+    }
 
 
     private void ExploreNeighbors()
@@ -39,13 +56,9 @@ public class Pathfinder : MonoBehaviour
         foreach (var direction in _directions)
         {
             Vector2Int neighborCoordinates = _searchCenter.GetGridPosition() + direction;
-            try
+            if (grid.ContainsKey(neighborCoordinates))
             {
                 QueueNewNeighbors(neighborCoordinates);
-            }
-            catch
-            {
-                
             }
         }
     }
@@ -67,6 +80,7 @@ public class Pathfinder : MonoBehaviour
 
     private void ColorStartAndEnd()
     {
+        // TODO consider moving out.
         startingWayPoint.SetTopColor(Color.red);
         endingWayPoint.SetTopColor(Color.green);
     }
@@ -79,7 +93,7 @@ public class Pathfinder : MonoBehaviour
             var gridPos = waypoint.GetGridPosition();
             if (grid.ContainsKey(gridPos))
             {
-                Debug.LogWarning("Skipping overlapping block: " + waypoint);
+                
             }
             else
             {
@@ -88,7 +102,7 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    private void Pathfind()
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(startingWayPoint);
         while (queue.Count > 0 && _isRunning)
@@ -98,9 +112,6 @@ public class Pathfinder : MonoBehaviour
             HaltIfEndFound();
             ExploreNeighbors();
         }
-
-        
-        print("Finished pathfinding?");
     }
 
     private void HaltIfEndFound()
