@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    // This is ok since this is a data class.
     public bool isExplored = false;
+    public Waypoint exploredFrom;
 
     private const int gridSize = 10;
 
     private Vector2Int gridPosition;
-
 
     public int GetGridSize()
     {
@@ -23,7 +24,9 @@ public class Waypoint : MonoBehaviour
 
     public void SetTopColor(Color color)
     {
-        var topQuadMeshRenderer = transform.Find("Top Quad").GetComponent<MeshRenderer>();
+         var topQuadMeshRenderer = transform.Find("Top Quad").GetComponent<MeshRenderer>();
         topQuadMeshRenderer.material.color = color;
+
     }
+
 }
