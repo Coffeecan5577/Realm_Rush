@@ -511,13 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWayPoint: {fileID: 1082905261}
-  endingWayPoint: {fileID: 961931255}
---- !u!114 &961931255 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
-    type: 2}
-  m_PrefabInternal: {fileID: 779908325}
-  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
+  endingWayPoint: {fileID: 1207275526}
 --- !u!1 &1068104456
 GameObject:
   m_ObjectHideFlags: 0
