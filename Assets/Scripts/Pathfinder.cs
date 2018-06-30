@@ -9,9 +9,12 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] private Waypoint startingWayPoint, endingWayPoint;
 
     private readonly Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+
     readonly Queue<Waypoint> queue = new Queue<Waypoint>();
+
     private bool _isRunning = true;
     private Waypoint _searchCenter;
+
     private  List<Waypoint> path = new List<Waypoint>(); 
 
     private readonly Vector2Int[] _directions =
@@ -24,11 +27,20 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        if (path.Count == 0)
+        {
+            CalculatePath();
+        }
+        return path;
+
+    }
+
+    private void CalculatePath()
+    {
         LoadBlocks();
         ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
-        return path;
     }
 
     private void CreatePath()
