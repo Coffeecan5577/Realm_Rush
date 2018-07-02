@@ -22,11 +22,10 @@ public class Waypoint : MonoBehaviour
         return new Vector2Int(Mathf.RoundToInt(transform.position.x / gridSize), Mathf.RoundToInt(transform.position.z / gridSize));
     }
 
-    public void SetTopColor(Color color)
-    {
-         var topQuadMeshRenderer = transform.Find("Top Quad").GetComponent<MeshRenderer>();
-        topQuadMeshRenderer.material.color = color;
 
+    private void OnMouseOver()
+    {
+        Debug.Log("Mouse is over block: " + name);
     }
 
 }

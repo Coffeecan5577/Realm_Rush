@@ -1742,56 +1742,6 @@ Prefab:
       propertyPath: m_Name
       value: -3,-1
       objectReference: {fileID: 0}
-    - target: {fileID: 102332895669584702, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: m_Text
-      value: -3,-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: startingWaypoint
-      value: 
-      objectReference: {fileID: 1961714786}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: endingWaypoint
-      value: 
-      objectReference: {fileID: 1207275526}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: startingBlockColor.r
-      value: 0.9485294
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: startingBlockColor.g
-      value: 0.06974482
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: startingBlockColor.b
-      value: 0.06974482
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: endingBlockColor.r
-      value: 0.033791065
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: endingBlockColor.g
-      value: 0.5161415
-      objectReference: {fileID: 0}
-    - target: {fileID: 114310804635447896, guid: 4c95a8054acec8241bf1b63c33fa9251,
-        type: 2}
-      propertyPath: endingBlockColor.b
-      value: 0.9191176
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c95a8054acec8241bf1b63c33fa9251, type: 2}
   m_IsPrefabParent: 0
@@ -2189,7 +2139,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: ac85b66cfce891f4fa2f45f0feb67ce1, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 0
 --- !u!23 &781828736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3398,12 +3348,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4876194297278004, guid: 4c95a8054acec8241bf1b63c33fa9251,
     type: 2}
   m_PrefabInternal: {fileID: 1199570568}
---- !u!114 &1207275526 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
-    type: 2}
-  m_PrefabInternal: {fileID: 1664111865}
-  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
 --- !u!4 &1252718895 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4924501306594408, guid: 4b4298861916b1e40bd707aebf124f53,
@@ -3996,7 +3940,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: ac85b66cfce891f4fa2f45f0feb67ce1, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 0
 --- !u!23 &1455028677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5257,12 +5201,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c95a8054acec8241bf1b63c33fa9251, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1961714786 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114886826993235642, guid: 4c95a8054acec8241bf1b63c33fa9251,
-    type: 2}
-  m_PrefabInternal: {fileID: 653427189}
-  m_Script: {fileID: 11500000, guid: a1c94dc0ab597c342a9483c7a78124b3, type: 3}
 --- !u!1001 &1963735049
 Prefab:
   m_ObjectHideFlags: 0
