@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    
     // This is ok since this is a data class.
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
+
+    [SerializeField] private Tower towerPrefab;
 
     private const int gridSize = 10;
 
@@ -24,8 +28,16 @@ public class Waypoint : MonoBehaviour
 
 
     private void OnMouseOver()
-    {
-        Debug.Log("Mouse is over block: " + name);
+    { 
+    
+        bool mouseClicked = Input.GetMouseButtonDown(0); // left mouse button.
+        if (mouseClicked && isPlaceable)
+        {
+            Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            isPlaceable = false;
+        }
+        
+
     }
 
 }

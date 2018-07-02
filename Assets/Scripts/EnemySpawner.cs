@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +31,11 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             print("Spawning new enemyPrefab...");
             yield return new WaitForSeconds(secondsBetweenSpawns);
+
+            if (enemyPrefab == null)
+            {
+                throw new NullReferenceException("Enemy does not exist.");
+            }
         }
     }
 }
