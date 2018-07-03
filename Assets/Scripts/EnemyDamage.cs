@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private Collider collisionMesh;
-    [SerializeField] private int hitPoints = 10;
+    [SerializeField] private int hitPoints = 3;
     [SerializeField] private ParticleSystem hitParticlePrefab;
     [SerializeField] private ParticleSystem deathParticlePrefab;
 
@@ -33,11 +33,9 @@ public class EnemyDamage : MonoBehaviour
     private void KillEnemy()
     {
         // important to instantiate before destroying the object.
-        var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        var vfx =Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
+        Destroy(vfx.gameObject, 1f);
         Destroy(gameObject);
-        
     }
-	
-	
 }
