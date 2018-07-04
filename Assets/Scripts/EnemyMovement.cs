@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField] private float movementPeriod = .5f;
     [SerializeField] private ParticleSystem goalParticle;
+    [SerializeField] private AudioClip selfDestructSFX;
     private EnemyDamage selfDestructSequence;
     
 
@@ -43,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     {
         var vfx = Instantiate(goalParticle, transform.position, Quaternion.identity);
         vfx.Play();
+        GetComponent<AudioSource>().PlayOneShot(selfDestructSFX);
         Destroy(vfx.gameObject, 1f);
         Destroy(gameObject);
     }
