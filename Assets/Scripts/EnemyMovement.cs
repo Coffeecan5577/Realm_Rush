@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -44,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
     {
         var vfx = Instantiate(goalParticle, transform.position, Quaternion.identity);
         vfx.Play();
-        GetComponent<AudioSource>().PlayOneShot(selfDestructSFX);
+        AudioSource.PlayClipAtPoint(selfDestructSFX, Camera.main.transform.position);
         Destroy(vfx.gameObject, 1f);
         Destroy(gameObject);
     }

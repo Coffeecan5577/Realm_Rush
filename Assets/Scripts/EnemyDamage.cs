@@ -40,7 +40,7 @@ public class EnemyDamage : MonoBehaviour
         // important to instantiate before destroying the object.
         var vfx =Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-        myAudioSource.PlayOneShot(destroyedSFX);
+        AudioSource.PlayClipAtPoint(destroyedSFX, Camera.main.transform.position, 1f);
         Destroy(vfx.gameObject, 1f);
         Destroy(gameObject);
     }
